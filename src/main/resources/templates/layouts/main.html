@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml"
+>
+<head>
+
+  <meta th:name="${_csrf.parameterName}" th:content="${_csrf.token}"/>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+
+  <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+<div>
+
+  <header th:insert="~{/layouts/header.html::header}"></header>
+
+
+  <main>
+    <div class="container">
+      <th:block layout:fragment="body"/>
+    </div>
+  </main>
+
+
+  <footer th:insert="~{/layouts/footer.html::footer}"></footer>
+
+  <div class="hide">
+    <form id="filterForm" th:method="GET" >
+      <input type="hidden" name="sort"/>
+      <input type="hidden" name="order"/>
+      <input type="hidden" name="page"/>
+    </form>
+  </div>
+
+
+  <script th:src="@{/js/bootstrap.min.js}" ></script>
+  <script th:src="@{/js/main.js}" ></script>
+
+
+  <th:block layout:fragment="scripts"/>
+</div>
+</body>
+</html>

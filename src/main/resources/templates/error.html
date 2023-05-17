@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main}">
+<head>
+
+</head>
+<body>
+
+<th:block layout:fragment="body">
+
+    <div class="text-center">
+        <br><br>
+        <p class="fs-1 "><i class="bi bi-exclamation-circle"></i></p>
+        <p class="fs-2">
+            Aaaah! Something went wrong.
+        </p>
+        <p class="mt-3">
+
+            Brace yourself till we get the error fixed.
+
+        </p>
+        <p>You may also refresh the page or try again later</p>
+        <p>Contact site administrator(s) if problem persist.</p>
+        <p th:if="${errorId}">Error Id: [[${errorId}]] </p>
+        <div class="mt-3">
+            <a th:href="@{/home}" class="" href="" title="Back to home">
+                Back to home
+            </a>
+        </div>
+
+
+    </div>
+</th:block>
+</body>
+</html>
